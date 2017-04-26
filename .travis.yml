@@ -7,6 +7,7 @@ after_success:
   then docker login -u="$DOCKER_USER" -p="$DOCKER_PASS";
   docker push softinstigate/angular-docker;
   fi
+- echo "Installed yarn version is `yarn --version`"
 env:
   global:
   - secure: vnhtrqLAhtCecISiEicrbGqe5JdL4Ub5OAeXyIYt8ZX4+MIy+AyyWtMNLcWXkqWEImNmRRvTZ5oEJOzuvKKG6OAYm52UqfVDWaZdAMSf0wIC4GtAQ/z6yb3lnEycIfuTazat/DHbcb29kIzOmDf1FqKIeV4clU90pEyD3amhGmJ0siWPe5ggcPjMJttvNG/2B9FzWnXJu/nVlvPbMctk08ikdkK9ErBhgXlCcC1H3mqfZ9gG/CNzkIhpjHB57Lx1aErzCZPpPdZAZ2yh5+mUNqTGlOsZB1Cwbtz1+uYP48myLcXk1Fv2muZbqs3YIel6Fg8mhKMLq8k/W5TpE/HX/9SL4zq/2EZKeY9ElLRgfZlYjgcLXNfywW9mpUTFsvBoKcYXZOi7utl2Ij1Oy7yct8ysUIa+kTWXy/MrLQ1ejJf86oTB/GpE0/zBiVmpLTNvjzN0hbXiEeeCp3l4nKNwqD14Mhg1U8EWrK9Xyh89Q8tMNIDF4lF0UHPQ9qjLNoZy3E4hQNuRpqradyF0hwNa3BNpaWbnDw2UikHzZbWLWf2UoLCkeivi7ZIi4Gb/nl0ssNLdmLHrvJ9N6xQGBv3Qu9KLZL3LCmD9NrvmOkfb6dKVe8Nf0nZZXtEvGY1Q5Opjxo0+nTrinT5bOmWfqi2UGSBM4Wt6rlbSTS1omO/Wdfs=
