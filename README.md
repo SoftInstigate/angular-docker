@@ -14,5 +14,5 @@ node:6
 ## Additional packages
 * apt-utils
 * rsync
-* yarn 0.24.x
+* yarn 0.27.x
 * typings 2.x
