@@ -4,9 +4,9 @@ script:
   - docker build --build-arg NODE_VERSION=$NODE -t softinstigate/angular-docker .
   - docker tag softinstigate/angular-docker:latest softinstigate/angular-docker:$NODE
 after_success:
-  - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; 
-      then docker login -u="$DOCKER_USER" -p="$DOCKER_PASS";
-      docker push softinstigate/angular-docker:$NODE
+  - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
+      docker login -u="$DOCKER_USER" -p="$DOCKER_PASS";
+      docker push softinstigate/angular-docker:$NODE;
       docker push softinstigate/angular-docker:latest;
     fi
 env:
