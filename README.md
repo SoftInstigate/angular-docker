@@ -9,10 +9,13 @@ It's based on node 6.x [LTS](https://github.com/nodejs/LTS) images and adds some
 Docker Hub: https://hub.docker.com/r/softinstigate/angular-docker/
 
 ## Base image
+
 node:8
 
 ## Additional packages
+
 * apt-utils
 * rsync
 * yarn
 * typings 2.x
+* awscli
