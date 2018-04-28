@@ -1,4 +1,6 @@
-FROM node:6
+ARG NODE_VERSION
+
+FROM node:$NODE_VERSION
 
 LABEL maintainer="SoftInstigate <info@softinstigate.com>"
 
@@ -7,3 +9,4 @@ RUN echo "deb http://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.
 RUN apt-get update && apt-get -y install apt-utils
 RUN apt-get -y install rsync yarn
 RUN yarn global add typings@2.x
+RUN echo "node version: $(node --version)"
