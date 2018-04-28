@@ -1,7 +1,7 @@
 services:
   - docker
 script:
-  - docker build --build-arg NODE_VERSION=$NODE -t softinstigate/angular-docker:$NODE .
+  - docker build --build-arg NODE_VERSION=$NODE -t softinstigate/angular-docker .
   - docker tag softinstigate/angular-docker:latest softinstigate/angular-docker:$NODE
 after_success:
   - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; 
