@@ -4,18 +4,17 @@
 
 A base docker image for **building** [Angular](https://angular.io) 2+ Web applications.
 
-It's based on [node LTS](https://github.com/nodejs/LTS) images and adds some tools like [yarn](https://yarnpkg.com/) and [typings](https://github.com/typings/typings).
+It's based on [node LTS](https://github.com/nodejs/LTS) images.
 
 Docker Hub: https://hub.docker.com/r/softinstigate/angular-docker/
 
 ## Base image
 
-node:8
+node:10
 
 ## Additional packages
 
 * apt-utils
 * rsync
 * yarn
-* typings 2.x
 * awscli
