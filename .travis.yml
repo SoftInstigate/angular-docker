@@ -5,12 +5,10 @@ script:
   - docker tag softinstigate/angular-docker:latest softinstigate/angular-docker:$NODE
 after_success:
   - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
-      docker login -u="$DOCKER_USER" -p="$DOCKER_PASS";
+      echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
       docker push softinstigate/angular-docker:$NODE;
       docker push softinstigate/angular-docker:latest;
     fi
 env:
   global:
-    - NODE=10
-    - secure: vnhtrqLAhtCecISiEicrbGqe5JdL4Ub5OAeXyIYt8ZX4+MIy+AyyWtMNLcWXkqWEImNmRRvTZ5oEJOzuvKKG6OAYm52UqfVDWaZdAMSf0wIC4GtAQ/z6yb3lnEycIfuTazat/DHbcb29kIzOmDf1FqKIeV4clU90pEyD3amhGmJ0siWPe5ggcPjMJttvNG/2B9FzWnXJu/nVlvPbMctk08ikdkK9ErBhgXlCcC1H3mqfZ9gG/CNzkIhpjHB57Lx1aErzCZPpPdZAZ2yh5+mUNqTGlOsZB1Cwbtz1+uYP48myLcXk1Fv2muZbqs3YIel6Fg8mhKMLq8k/W5TpE/HX/9SL4zq/2EZKeY9ElLRgfZlYjgcLXNfywW9mpUTFsvBoKcYXZOi7utl2Ij1Oy7yct8ysUIa+kTWXy/MrLQ1ejJf86oTB/GpE0/zBiVmpLTNvjzN0hbXiEeeCp3l4nKNwqD14Mhg1U8EWrK9Xyh89Q8tMNIDF4lF0UHPQ9qjLNoZy3E4hQNuRpqradyF0hwNa3BNpaWbnDw2UikHzZbWLWf2UoLCkeivi7ZIi4Gb/nl0ssNLdmLHrvJ9N6xQGBv3Qu9KLZL3LCmD9NrvmOkfb6dKVe8Nf0nZZXtEvGY1Q5Opjxo0+nTrinT5bOmWfqi2UGSBM4Wt6rlbSTS1omO/Wdfs=
-    - secure: SbQagFAqerQoIAIEmZG6QpWvbeW1QAZ5Zs7hCv3M+5XXdImw6lTffV4yCnmXMc4SlICtzx/cq1zvOxVPKTooc1kB5LDcPJKHTZRb2hn7/p0r3LxoKpkgPBfLeeF36SNXeY+P3Zt1Kqi2F2x81pOODBYZVDQEsa0is+msPnJC7cALRz+EIZRix1B4Lp72JVHizmAlWlHLfTTKeewuiodLwAiEoYmLfLmiewhkLFvPVfdOiUYU5UxgAIOpridELBj8lz5plX0tQM7jkgFIOQW12nQ7xXGqHuHiWxMe0D2S2QPJoXT/1SApBsfjm64vZDoW8KQjwcGVedfb+fN9e7gWN2MJu7GLc48diX6/VVls8ww/LerBO2yPzzba4sNQVHAHn/klxUaC1cPYOQrA0eD34q/NsQh0i/kI0xB8QtJhMp7IIK6PH0n6xStYoQDRnIq1FH3JLrJuXDcdZu4sduZ2rgqhSDa7+488FuHfOTTAVtNOmxdBwegJ5vWBs7r0u8TmWRfmqOtxrQZjAuoLXzgFi6+YqDdO1qMxiSMmRTlUOErEpkmdNfKsxnoHyJlWpYOtRTLhgFJjmXg+BDAHv2QxkXZ/j3aByinwQrelw4P82Fn4yOkiS6G56uJz2nTFaUFoyQYrg78aQTvhmJU9vOFLlo/gkcRg8zLDHwVvXKav3IE=
+    - NODE=10.17
