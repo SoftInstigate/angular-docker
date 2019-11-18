@@ -5,7 +5,7 @@ script:
   - docker tag softinstigate/angular-docker:latest softinstigate/angular-docker:$NODE
 after_success:
   - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
-      echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
+      echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin;
       docker push softinstigate/angular-docker:$NODE;
       docker push softinstigate/angular-docker:latest;
     fi
