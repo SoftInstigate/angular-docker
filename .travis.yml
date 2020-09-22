@@ -10,4 +10,4 @@ script:
     fi
 env:
   global:
-    - NODE=10.21
+    - NODE=10.22
